@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for i in object_list %}
+   <li> <a href="{% url 'news_detail' i.pk %}"> {{i.title}}</a></li>
+    <hr>
+    <div>
+        <img src="{{i.image.url}}" alt="">
+    </div>
+{% endfor %}
+<br> <br>   
+
+<button><a href="{% url 'news_create' %}" >yaratish</a></button>
+{% endblock content %}
